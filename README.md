@@ -9,6 +9,7 @@ Hello, world! This repository is a personal portfolio page I began putting toget
 - Git/Github
 - React
 - Redux
+- Material UI
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
