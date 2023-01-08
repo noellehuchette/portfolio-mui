@@ -1,83 +1,154 @@
 import React from 'react';
+import {
+  Box,
+  Card,
+  CardHeader,
+  CardContent,
+  CardMedia,
+  Container,
+  Grid,
+  Typography,
+  Avatar,
+  Divider,
+  Paper,
+  Link
+} from '@mui/material';
+import Carousel from 'react-material-ui-carousel';
+import { GitHub, OpenInBrowser } from '@mui/icons-material';
+import projects from './projects';
 import './style.css';
+import { flexbox, height } from '@mui/system';
 
 const Main = () => {
   return (
-    <div className="home-block">
-      <div className="personal-info">
-        <div className="headshot-block">
-          {/* <img className="headshot" src="/headshot.jpg" alt="Noelle Huchette" /> */}
-        </div>
-        <div className="bio-block">
-          <div className="block-content">
-            <div className="block-title">
-              <h2>bio</h2>
-            </div>
-            <h3>Noelle Huchette</h3>
-            <span>(they/them)</span>
-            <p>
-              {' '}
-              Software Engineer with a background in mechanical engineering and
-              control systems. Tenacious and professional individual that excels
-              at listening to both customer and business needs. Self starter
-              with strong problem solving skills and well developed
-              organizational abilities. Productive relationship builder and
-              exceptional listener with a growth mindset and the ability to
-              learn to perform duties with minimal supervision.{' '}
-            </p>
-            <p>
-              Interested in making a positive impact through well-crafted
-              technological solutions for issues large and small.
-            </p>
-          </div>
-        </div>
-        <div className="skills-block">
-          <div className="block-content">
-            <div className="block-title">
-              <h2>skills</h2>
-            </div>
-            <h4>Proficient</h4>
-            <ul>
-              <li>JavaScript/HTML/CSS</li>
-              <li>React</li>
-              <li>Redux</li>
-              <li>Bootstrap</li>
-              <li>MaterialUI</li>
-              <li>Node.js</li>
-              <li>PostgreSQL</li>
-              <li>Sequelize</li>
-              <li>Express</li>
-              <li>Firebase/Firestore</li>
-              <li>JWT</li>
-              <li>Git/Github</li>
-              <li>RESTful APIs</li>
-              <li>Markdown</li>
-            </ul>
-            <h4>General</h4>
-            <ul>
-              <li>Problem Solving</li>
-              <li>Teamwork</li>
-              <li>Documentation</li>
-              <li>Personal Communication</li>
-              <li>Professional Communication</li>
-              <li>Time Management</li>
-            </ul>
-            <h4>Learning</h4>
-            <ul>
-              <li>Java</li>
-              <li>Python</li>
-              <li>Chai</li>
-              <li>Jasmine</li>
-              <li>Stripe</li>
-              <li>D3</li>
-              <li>TypeScript</li>
-              <li>C#</li>
-              <li>Unity</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Box
+      className="main-block"
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        pt: '5rem'
+      }}
+    >
+      <Container
+        maxWidth="xl"
+        sx={{
+          p: 1,
+          '& > *': {
+            p: 1
+          }
+        }}
+      >
+        <Box
+          id="about"
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'space-evenly',
+            alignItems: 'center'
+          }}
+        >
+          <Avatar
+            sx={{
+              m: 1,
+              width: '200px',
+              height: '200px',
+              borderRadius: '5%'
+            }}
+            src="./headshot.jpg"
+          />{' '}
+          <Box
+            sx={{
+              width: { xs: '100%', sm: '50%' },
+              m: { xs: 1, sm: 2 },
+              p: 1,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}
+          >
+            <Card elevation={6} sx={{ p: 2, width: '75%' }}>
+              <Typography variant="h4">Noelle Huchette</Typography>
+              <Divider />
+              <Typography variant="subtitle" sx={{ fontFamily: 'monospace' }}>
+                (they/them)
+              </Typography>
+            </Card>
+          </Box>
+          <Typography variant="body1" sx={{ my: 2, p: 2 }}>
+            Software Engineer with a background in mechanical engineering and
+            control systems. Tenacious and professional self starter with strong
+            problem solving skills and well developed organizational abilities.
+            Productive relationship builder and exceptional listener with a
+            growth mindset. Interested in making a positive impact through
+            well-crafted technological solutions for issues large and small.
+          </Typography>
+        </Box>
+        <Divider />
+        <Box sx={{ p: 1, gap: 1, m: 1 }} id="projects">
+          <Typography sx={{ m: 1 }} variant="h4">
+            Projects
+          </Typography>
+          <Carousel
+            animation="slide"
+            interval={5000}
+            duration={400}
+            sx={{ height: 1 }}
+          >
+            {projects.map((project, pidx) => (
+              <Paper
+                key={project.name}
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'space-evenly',
+                  minHeight: '250px',
+                  p: 1,
+                  m: 1
+                }}
+              >
+                <Typography
+                  variant="h6"
+                  onClick={() => window.open(project.deployed)}
+                >
+                  {project.name}
+                </Typography>
+                <p>{project.description}</p>
+                <Typography variant="body">
+                  {project.tech.map((t, tidx) => (
+                    <span key={`${pidx}+${tidx}`}>
+                      {tidx ? ', ' : ''}
+                      {t}
+                    </span>
+                  ))}
+                </Typography>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: 2
+                  }}
+                >
+                  <OpenInBrowser
+                    fontSize="large"
+                    sx={{ width: '30px' }}
+                    onClick={() => window.open(project.deployed)}
+                  />
+                  <GitHub
+                    fontSize="large"
+                    sx={{ width: '30px' }}
+                    onClick={() => window.open(project.github)}
+                  />
+                </Box>
+              </Paper>
+            ))}
+          </Carousel>
+        </Box>
+        <Paper id="skills">Test</Paper>
+        <Paper id="contact">Test</Paper>
+      </Container>
+    </Box>
   );
 };
 

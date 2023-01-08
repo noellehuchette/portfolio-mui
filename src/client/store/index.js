@@ -2,6 +2,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { createLogger } from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import settings from './settings';
 
 const dummyReducer = function (state = {}, action) {
   switch (action.type) {
@@ -11,7 +12,7 @@ const dummyReducer = function (state = {}, action) {
 };
 
 const reducer = combineReducers({
-  dummyReducer
+  settings
 });
 
 const middleware = composeWithDevTools(

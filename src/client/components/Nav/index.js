@@ -1,24 +1,35 @@
-import React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  IconButton,
+  Typography,
+  Menu,
+  Container,
+  Button,
+  MenuItem
+} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import { LinkedIn, GitHub, Article } from '@mui/icons-material';
-import { HashLink as Link } from 'react-router-hash-link';
+import {
+  LinkedIn,
+  GitHub,
+  Article,
+  LightMode,
+  DarkMode
+} from '@mui/icons-material';
+import { HashLink } from 'react-router-hash-link';
+import { toggleTheme } from '../../store/settings';
 import './style.css';
 
-const pages = ['Projects', 'Contact', 'Resume'];
-const links = { Projects: '', Contact: '', Resume: '' };
+const pages = ['About', 'Skills', 'Projects', 'Contact'];
 
 function Nav() {
+  const theme = useSelector((state) => state.settings.theme);
+  const dispatch = useDispatch();
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -30,7 +41,7 @@ function Nav() {
   };
 
   return (
-    <AppBar position="fixed">
+    <AppBar sx={{ zIndex: '1000' }} position="fixed">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -42,20 +53,18 @@ function Nav() {
               display: { xs: 'none', sm: 'flex' },
               fontFamily: 'monospace',
               fontWeight: 500,
-              letterSpacing: '.1rem',
               color: 'inherit',
               textDecoration: 'none',
               textAlign: 'center',
               alignItems: 'center',
-              justifyContent: 'baseline',
+              justifyContent: 'center',
               gap: 1
             }}
           >
-            <Avatar alt="Noelle Huchette" src="/headshot.jpg" />
-            NOELLE HUCHETTE
+            Noelle Huchette
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' } }}>
+          <Box sx={{ display: { xs: 'flex', sm: 'none' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -92,7 +101,7 @@ function Nav() {
             </Menu>
           </Box>
           <Typography
-            variant="h5"
+            variant="h6"
             noWrap
             component="a"
             href=""
@@ -101,49 +110,51 @@ function Nav() {
               flexGrow: 1,
               fontFamily: 'monospace',
               fontWeight: 500,
-              letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
               textAlign: 'center',
               alignItems: 'center',
-              justifyContent: 'baseline',
+              justifyContent: 'center',
               gap: 1
             }}
           >
             {' '}
-            <Avatar alt="Noelle Huchette" src="/headshot.jpg" />
-            NEH
+            Noelle Huchette
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: 'none', sm: 'flex' },
+              justifyContent: 'right'
+            }}
+          >
             {pages.map((page) => (
               <Button
+                color="inherit"
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, display: 'block' }}
               >
                 {page}
               </Button>
             ))}
           </Box>
-
-          <Box sx={{ flexGrow: 0.2 }}>
-            <IconButton
-              aria-label="LinkedIn"
-              onClick={() =>
-                window.open('https://www.linkedin.com/in/noelle-huchette/')
-              }
-              color="inherit"
-            >
-              <LinkedIn sx={{ fontSize: { sm: '1.5rem', md: '2.5rem' } }} />
-            </IconButton>
-            <IconButton
-              aria-label="GitHub"
-              onClick={() => window.open('https://github.com/noellehuchette')}
-              color="inherit"
-            >
-              <GitHub sx={{ fontSize: { sm: '1.5rem', md: '2.5rem' } }} />
-            </IconButton>
-          </Box>
+          <IconButton
+            color="inherit"
+            size="large"
+            sx={{
+              width: 50,
+              height: 50,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              ml: { xs: 0, sm: 2 }
+            }}
+            onClick={() => dispatch(toggleTheme())}
+          >
+            {' '}
+            {theme.palette.type === 'light' ? <LightMode /> : <DarkMode />}
+          </IconButton>
         </Toolbar>
       </Container>
     </AppBar>
