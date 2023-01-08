@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import {
   Box,
   Card,
@@ -51,8 +51,7 @@ const Main = () => {
             sx={{
               m: 1,
               width: '200px',
-              height: '200px',
-              borderRadius: '5%'
+              height: '200px'
             }}
             src="./headshot.jpg"
           />{' '}
@@ -145,8 +144,8 @@ const Main = () => {
             ))}
           </Carousel>
         </Box>
-        <Paper id="skills">Test</Paper>
-        <Paper id="contact">Test</Paper>
+        <Box id="skills">Test</Box>
+        <Box id="contact">Test</Box>
       </Container>
     </Box>
   );

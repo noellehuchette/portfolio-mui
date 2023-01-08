@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   AppBar,
@@ -24,7 +24,7 @@ import { HashLink } from 'react-router-hash-link';
 import { toggleTheme } from '../../store/settings';
 import './style.css';
 
-const pages = ['About', 'Skills', 'Projects', 'Contact'];
+const pages = ['about', 'projects', 'skills', 'contact'];
 
 function Nav() {
   const theme = useSelector((state) => state.settings.theme);
@@ -38,6 +38,11 @@ function Nav() {
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
+  };
+
+  const executeScroll = (page) => {
+    const elem = document.getElementById(page);
+    elem.scrollIntoView();
   };
 
   return (
@@ -94,8 +99,16 @@ function Nav() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem
+                  key={page + 'menuitem'}
+                  onClick={() => executeScroll(page)}
+                >
+                  <Typography
+                    textAlign="center"
+                    sx={{ fontFamily: 'monospace' }}
+                  >
+                    {page}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -132,8 +145,8 @@ function Nav() {
               <Button
                 color="inherit"
                 key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, display: 'block' }}
+                onClick={() => executeScroll(page)}
+                sx={{ my: 2, display: 'block', fontFamily: 'monospace' }}
               >
                 {page}
               </Button>
