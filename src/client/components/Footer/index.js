@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Card, IconButton, Typography } from '@mui/material';
+import { Box, Card, IconButton, Typography, Paper } from '@mui/material';
 import { LinkedIn, GitHub, Article } from '@mui/icons-material';
 import './style.css';
 import { textAlign } from '@mui/system';
@@ -21,13 +21,15 @@ const Footer = () => {
         zIndex: '1000'
       }}
     >
-      <Card
+      <Paper
         sx={{
           display: 'flex',
           width: '100%',
           textAlign: 'center',
           justifyContent: 'space-evenly',
-          alignItems: 'center'
+          alignItems: 'center',
+          p: 0.5,
+          borderRadius: 0
         }}
       >
         <IconButton
@@ -67,7 +69,7 @@ const Footer = () => {
             Resume
           </Typography>
         </IconButton>
-      </Card>
+      </Paper>
     </Box>
   );
 };

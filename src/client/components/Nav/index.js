@@ -42,7 +42,11 @@ function Nav() {
 
   const executeScroll = (page) => {
     const elem = document.getElementById(page);
-    elem.scrollIntoView();
+    elem.scrollIntoView({
+      behavior: 'smooth',
+      block: 'end',
+      inline: 'center'
+    });
   };
 
   return (
@@ -153,7 +157,7 @@ function Nav() {
             ))}
           </Box>
           <IconButton
-            color="inherit"
+            color="secondary"
             size="large"
             sx={{
               width: 50,

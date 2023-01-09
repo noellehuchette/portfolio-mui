@@ -16,8 +16,8 @@ import {
 import Carousel from 'react-material-ui-carousel';
 import { GitHub, OpenInBrowser } from '@mui/icons-material';
 import projects from './projects';
+import Contact from '../Contact';
 import './style.css';
-import { flexbox, height } from '@mui/system';
 
 const Main = () => {
   return (
@@ -26,11 +26,11 @@ const Main = () => {
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        pt: '5rem'
+        py: 8
       }}
     >
       <Container
-        maxWidth="xl"
+        maxWidth="lg"
         sx={{
           p: 1,
           '& > *': {
@@ -65,17 +65,17 @@ const Main = () => {
               justifyContent: 'center'
             }}
           >
-            <Card elevation={6} sx={{ p: 2, width: '75%' }}>
+            <Box sx={{ p: 1, width: '85%' }}>
               <Typography variant="h4">Noelle Huchette</Typography>
               <Divider />
               <Typography variant="subtitle" sx={{ fontFamily: 'monospace' }}>
                 (they/them)
               </Typography>
-            </Card>
+            </Box>
           </Box>
           <Typography variant="body1" sx={{ my: 2, p: 2 }}>
             Software Engineer with a background in mechanical engineering and
-            control systems. Tenacious and professional self starter with strong
+            control systems. Tenacious, professional self-starter with strong
             problem solving skills and well developed organizational abilities.
             Productive relationship builder and exceptional listener with a
             growth mindset. Interested in making a positive impact through
@@ -83,8 +83,10 @@ const Main = () => {
           </Typography>
         </Box>
         <Divider />
+        <Box id="skills">Test</Box>
+        <Divider />
         <Box sx={{ p: 1, gap: 1, m: 1 }} id="projects">
-          <Typography sx={{ m: 1 }} variant="h4">
+          <Typography sx={{ m: 1 }} variant="h5">
             Projects
           </Typography>
           <Carousel
@@ -94,7 +96,7 @@ const Main = () => {
             sx={{ height: 1 }}
           >
             {projects.map((project, pidx) => (
-              <Paper
+              <Box
                 key={project.name}
                 sx={{
                   display: 'flex',
@@ -107,6 +109,7 @@ const Main = () => {
                 }}
               >
                 <Typography
+                  fontWeight="bold"
                   variant="h6"
                   onClick={() => window.open(project.deployed)}
                 >
@@ -126,7 +129,7 @@ const Main = () => {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    gap: 2
+                    gap: 1
                   }}
                 >
                   <OpenInBrowser
@@ -140,12 +143,14 @@ const Main = () => {
                     onClick={() => window.open(project.github)}
                   />
                 </Box>
-              </Paper>
+              </Box>
             ))}
           </Carousel>
         </Box>
-        <Box id="skills">Test</Box>
-        <Box id="contact">Test</Box>
+        <Divider />
+        <Box id="contact">
+          <Contact />
+        </Box>
       </Container>
     </Box>
   );

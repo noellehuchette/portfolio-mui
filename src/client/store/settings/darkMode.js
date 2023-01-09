@@ -5,18 +5,18 @@ const darkMode = createTheme({
   palette: {
     type: 'dark',
     primary: {
-      main: '#A799B7'
+      main: '#141414'
     },
     secondary: {
-      main: '#028090'
+      main: '#D2F898'
     },
     background: {
-      default: '#282c36',
-      paper: '#282c36'
+      default: '#1F1F1F',
+      paper: '#2F2F2F'
     },
     text: {
-      primary: '#F3E2E6',
-      secondary: '#DBA9B4'
+      primary: '#FBFAEE',
+      secondary: '#FBFAEE'
     },
     error: {
       main: '#F44336'

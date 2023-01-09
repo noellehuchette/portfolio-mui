@@ -6,19 +6,18 @@ const lightMode = createTheme({
   palette: {
     type: 'light',
     primary: {
-      main: '#2C2C54'
+      main: '#5C5C5C'
     },
     secondary: {
-      main: '#951A4D'
+      main: '#F6F930'
     },
     background: {
-      default: '#FCF7F8',
-      paper: '#FCF7F8',
-      card: '#FCF7F8'
+      default: '#FCFCFC',
+      paper: '#EEFCD9'
     },
     text: {
-      primary: '#090A0C',
-      secondary: '#090A0C'
+      primary: '#161315',
+      secondary: '#211C1F'
     },
     error: {
       main: '#F44336'
