@@ -211,6 +211,7 @@ const Main = () => {
         <Box id="contact">
           <Contact />
         </Box>
+        <Divider />
       </Container>
     </Box>
   );
