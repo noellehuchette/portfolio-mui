@@ -118,7 +118,7 @@ const Main = () => {
             {Object.keys(technologies).map((key, kidx) => {
               return (
                 <Box key={key} sx={{ m: 1 }}>
-                  <Typography variant="h6">
+                  <Typography variant="h6" fontStyle={'italic'}>
                     {key[0].toUpperCase() + key.slice(1)}:
                   </Typography>
                   {technologies[key].map((tech, tidx) => {
