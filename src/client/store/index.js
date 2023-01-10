@@ -1,15 +1,15 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { createLogger } from 'redux-logger';
+// import { createLogger } from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import settings from './settings';
 
-const dummyReducer = function (state = {}, action) {
-  switch (action.type) {
-    default:
-      return state;
-  }
-};
+// const dummyReducer = function (state = {}, action) {
+//   switch (action.type) {
+//     default:
+//       return state;
+//   }
+// };
 
 const reducer = combineReducers({
   settings

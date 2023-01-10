@@ -1,4 +1,4 @@
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 // import { ThemeOptions } from '@material-ui/core/styles/createMuiTheme';
 
 const darkMode = createTheme({

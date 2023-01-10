@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   AppBar,
@@ -12,15 +12,7 @@ import {
   MenuItem
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import Tooltip from '@mui/material/Tooltip';
-import {
-  LinkedIn,
-  GitHub,
-  Article,
-  LightMode,
-  DarkMode
-} from '@mui/icons-material';
-import { HashLink } from 'react-router-hash-link';
+import { LightMode, DarkMode } from '@mui/icons-material';
 import { toggleTheme } from '../../store/settings';
 import './style.css';
 

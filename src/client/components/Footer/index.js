@@ -1,8 +1,7 @@
 import React from 'react';
-import { Box, Card, IconButton, Typography, Paper } from '@mui/material';
+import { Box, IconButton, Typography, Paper } from '@mui/material';
 import { LinkedIn, GitHub, Article } from '@mui/icons-material';
 import './style.css';
-import { textAlign } from '@mui/system';
 
 const Footer = () => {
   const onDownload = () => {

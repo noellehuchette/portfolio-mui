@@ -1,18 +1,5 @@
-import React, { useRef } from 'react';
-import {
-  Box,
-  Card,
-  CardHeader,
-  CardContent,
-  CardMedia,
-  Container,
-  Grid,
-  Typography,
-  Avatar,
-  Divider,
-  Paper,
-  Link
-} from '@mui/material';
+import React from 'react';
+import { Box, Container, Typography, Avatar, Divider } from '@mui/material';
 import Carousel from 'react-material-ui-carousel';
 import { GitHub, OpenInBrowser, School, Code, Work } from '@mui/icons-material';
 import projects from './projects';

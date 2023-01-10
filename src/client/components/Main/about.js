@@ -1,7 +1,7 @@
 export const education = [
   {
     school: 'Rice University',
-    degree: 'BS of Mechanical Engineering',
+    degree: 'BS in Mechanical Engineering',
     graduation: '2014'
   },
   {
@@ -18,5 +18,3 @@ export const technologies = {
   other: ['Git', 'Github', 'Heroku', 'Netlify', 'Stripe'],
   learning: ['TypeScript', 'C#', '.NET']
 };
-
-export default { education, technologies };

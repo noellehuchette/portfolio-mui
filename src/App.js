@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Nav from './client/components/Nav/index';
 import Main from './client/components/Main';
-import Routes from './client/components/Routes';
+// import Routes from './client/components/Routes';
 import Footer from './client/components/Footer';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import { useSelector } from 'react-redux';
