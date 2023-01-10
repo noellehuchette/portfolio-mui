@@ -14,8 +14,9 @@ import {
   Link
 } from '@mui/material';
 import Carousel from 'react-material-ui-carousel';
-import { GitHub, OpenInBrowser } from '@mui/icons-material';
+import { GitHub, OpenInBrowser, School, Code, Work } from '@mui/icons-material';
 import projects from './projects';
+import { education, technologies } from './about';
 import Contact from '../Contact';
 import './style.css';
 
@@ -38,8 +39,9 @@ const Main = () => {
           }
         }}
       >
+        <Divider />
         <Box
-          id="about"
+          id="home"
           sx={{
             display: 'flex',
             flexWrap: 'wrap',
@@ -83,12 +85,83 @@ const Main = () => {
           </Typography>
         </Box>
         <Divider />
-        <Box id="skills">Test</Box>
+        <Box
+          id="about"
+          sx={{ m: 1, p: 1, gap: 2, display: 'flex', flexDirection: 'column' }}
+        >
+          <Box>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: 1
+              }}
+            >
+              <School />
+              <Typography sx={{}} variant="h5" fontWeight={'bold'}>
+                Education
+              </Typography>
+            </Box>
+            {education.map((edu, eidx) => {
+              return (
+                <Box sx={{ m: 1, gap: 1 }} key={`${edu.school}`}>
+                  <Typography variant="h6">{edu.school}</Typography>
+                  <Typography variant="subtitle1">{edu.degree}</Typography>
+                  <Typography variant="subtitle2">{edu.graduation}</Typography>
+                </Box>
+              );
+            })}
+          </Box>
+          <Divider />
+          <Box>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: 1
+              }}
+            >
+              <Code />
+              <Typography fontWeight={'bold'} variant="h5">
+                Technologies
+              </Typography>
+            </Box>
+            {Object.keys(technologies).map((key, kidx) => {
+              return (
+                <Box key={key} sx={{ m: 1 }}>
+                  <Typography variant="h6">
+                    {key[0].toUpperCase() + key.slice(1)}:
+                  </Typography>
+                  {technologies[key].map((tech, tidx) => {
+                    return (
+                      <span key={tech}>
+                        {tidx ? ', ' : ''}
+                        {tech}
+                      </span>
+                    );
+                  })}
+                </Box>
+              );
+            })}
+          </Box>
+        </Box>
         <Divider />
         <Box sx={{ p: 1, gap: 1, m: 1 }} id="projects">
-          <Typography sx={{ m: 1 }} variant="h5">
-            Projects
-          </Typography>
+          <Box
+            sx={{
+              display: 'flex',
+              gap: 1,
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}
+          >
+            <Work />
+            <Typography sx={{ m: 1 }} variant="h5" fontWeight={'bold'}>
+              Projects
+            </Typography>
+          </Box>
           <Carousel
             animation="slide"
             interval={5000}
@@ -109,7 +182,7 @@ const Main = () => {
                 }}
               >
                 <Typography
-                  fontWeight="bold"
+                  fontStyle={'oblique'}
                   variant="h6"
                   onClick={() => window.open(project.deployed)}
                 >

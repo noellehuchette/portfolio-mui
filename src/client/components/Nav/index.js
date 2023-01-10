@@ -24,7 +24,7 @@ import { HashLink } from 'react-router-hash-link';
 import { toggleTheme } from '../../store/settings';
 import './style.css';
 
-const pages = ['about', 'projects', 'skills', 'contact'];
+const pages = ['home', 'about', 'projects', 'contact'];
 
 function Nav() {
   const theme = useSelector((state) => state.settings.theme);

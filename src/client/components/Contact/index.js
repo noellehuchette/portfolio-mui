@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { TextField, Button, Box, Typography } from '@mui/material';
-import { Send, MarkEmailRead } from '@mui/icons-material';
+import { Send, MarkEmailRead, Email } from '@mui/icons-material';
 
 const initValues = {
   fullName: '',
@@ -92,7 +92,19 @@ const Contact = () => {
           gap: 1.5
         }}
       >
-        <Typography variant="h5">Contact Me</Typography>
+        <Box
+          sx={{
+            display: 'flex',
+            gap: 1,
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
+          <Email />
+          <Typography variant="h5" fontWeight={'bold'}>
+            Contact Me
+          </Typography>
+        </Box>
         <TextField
           name="fullName"
           label="Full Name"
