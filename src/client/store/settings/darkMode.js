@@ -26,7 +26,12 @@ const darkMode = createTheme({
     },
     success: {
       main: '#4CAF50'
-    }
+    },
+    action: {
+      disabled: '#FBFAEE',
+      disabledBackground: '#2f2f2f'
+    },
+    divider: '#3f3f3f'
   }
 });
 

@@ -12,7 +12,7 @@ const lightMode = createTheme({
     },
     background: {
       default: '#FCFCFC',
-      paper: '#EEFCD9'
+      paper: '#FEFEFE'
     },
     text: {
       primary: '#161315',
@@ -26,7 +26,8 @@ const lightMode = createTheme({
     },
     success: {
       main: '#4CAF50'
-    }
+    },
+    divider: '#cfcfcf'
   }
 });
 

@@ -106,6 +106,8 @@ const Contact = () => {
           </Typography>
         </Box>
         <TextField
+          variant="filled"
+          color="secondary"
           name="fullName"
           label="Full Name"
           value={values.fullName}
@@ -120,6 +122,8 @@ const Contact = () => {
           })}
         />
         <TextField
+          variant="filled"
+          color="secondary"
           name="email"
           label="Email"
           value={values.email}
@@ -134,6 +138,8 @@ const Contact = () => {
           })}
         />
         <TextField
+          variant="filled"
+          color="secondary"
           name="message"
           label="Message"
           value={values.message}
