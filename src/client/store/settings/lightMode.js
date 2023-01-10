@@ -8,7 +8,7 @@ const lightMode = createTheme({
       main: '#5C5C5C'
     },
     secondary: {
-      main: '#F6F930'
+      main: '#cacc14'
     },
     background: {
       default: '#FCFCFC',

@@ -107,7 +107,7 @@ const Contact = () => {
         </Box>
         <TextField
           variant="filled"
-          color="secondary"
+          color="primary"
           name="fullName"
           label="Full Name"
           value={values.fullName}
@@ -123,7 +123,7 @@ const Contact = () => {
         />
         <TextField
           variant="filled"
-          color="secondary"
+          color="primary"
           name="email"
           label="Email"
           value={values.email}
@@ -139,7 +139,7 @@ const Contact = () => {
         />
         <TextField
           variant="filled"
-          color="secondary"
+          color="primary"
           name="message"
           label="Message"
           value={values.message}
