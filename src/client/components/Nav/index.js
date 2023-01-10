@@ -36,7 +36,7 @@ function Nav() {
     const elem = document.getElementById(page);
     elem.scrollIntoView({
       behavior: 'smooth',
-      block: 'end',
+      block: 'center',
       inline: 'center'
     });
   };

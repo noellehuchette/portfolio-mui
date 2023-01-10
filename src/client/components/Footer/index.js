@@ -27,12 +27,11 @@ const Footer = () => {
           textAlign: 'center',
           justifyContent: 'space-evenly',
           alignItems: 'center',
-          p: 0.5,
           borderRadius: 0
         }}
       >
         <IconButton
-          sx={{ p: 0, gap: 0.5 }}
+          sx={{ p: 0.5, gap: 0.5, borderRadius: 0 }}
           aria-label="LinkedIn"
           onClick={() =>
             window.open('https://www.linkedin.com/in/noelle-huchette/')
@@ -45,7 +44,7 @@ const Footer = () => {
           </Typography>
         </IconButton>
         <IconButton
-          sx={{ p: 0, gap: 0.5 }}
+          sx={{ p: 0.5, gap: 0.5, borderRadius: 0 }}
           aria-label="GitHub"
           onClick={() => window.open('https://github.com/noellehuchette')}
           color="inherit"
@@ -57,7 +56,7 @@ const Footer = () => {
           </Typography>
         </IconButton>
         <IconButton
-          sx={{ p: 0, gap: 0.5 }}
+          sx={{ p: 0.5, gap: 0.5, borderRadius: 0 }}
           aria-label="Resume"
           onClick={onDownload}
           color="inherit"
