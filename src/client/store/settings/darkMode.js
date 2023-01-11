@@ -28,7 +28,7 @@ const darkMode = createTheme({
       main: '#4CAF50'
     },
     action: {
-      disabled: '#FBFAEE',
+      disabled: '#AAAAAA',
       disabledBackground: '#2f2f2f'
     },
     divider: '#3f3f3f'
