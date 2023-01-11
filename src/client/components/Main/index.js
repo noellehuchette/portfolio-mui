@@ -54,11 +54,22 @@ const Main = () => {
               justifyContent: 'center'
             }}
           >
-            <Box sx={{ p: 1, width: '85%' }}>
+            <Box
+              sx={{
+                p: 1,
+                width: '85%',
+                display: 'flex',
+                flexDirection: 'column'
+              }}
+            >
               <Typography variant="h4">Noelle Huchette</Typography>
-              <Divider />
-              <Typography variant="subtitle" sx={{ fontFamily: 'monospace' }}>
-                (they/them)
+              <Divider>
+                <Typography variant="subtitle" sx={{ fontFamily: 'monospace' }}>
+                  (they/them)
+                </Typography>
+              </Divider>
+              <Typography variant="caption">
+                Full Stack Developer, Software Engineer
               </Typography>
             </Box>
           </Box>
