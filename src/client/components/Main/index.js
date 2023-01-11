@@ -82,25 +82,26 @@ const Main = () => {
             well-crafted technological solutions for issues large and small.
           </Typography>
         </Box>
-        <Divider />
         <Box
           id="about"
           sx={{ m: 1, p: 1, gap: 2, display: 'flex', flexDirection: 'column' }}
         >
           <Box>
-            <Box
-              sx={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                gap: 1
-              }}
-            >
-              <School />
-              <Typography sx={{}} variant="h5" fontWeight={'bold'}>
-                Education
-              </Typography>
-            </Box>
+            <Divider>
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  gap: 1
+                }}
+              >
+                <School />
+                <Typography sx={{}} variant="h5" fontWeight={'bold'}>
+                  Education
+                </Typography>
+              </Box>
+            </Divider>
             {education.map((edu, eidx) => {
               return (
                 <Box sx={{ m: 1, gap: 1 }} key={`${edu.school}`}>
@@ -111,21 +112,22 @@ const Main = () => {
               );
             })}
           </Box>
-          <Divider />
           <Box>
-            <Box
-              sx={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                gap: 1
-              }}
-            >
-              <Code />
-              <Typography fontWeight={'bold'} variant="h5">
-                Technologies
-              </Typography>
-            </Box>
+            <Divider>
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  gap: 1
+                }}
+              >
+                <Code />
+                <Typography fontWeight={'bold'} variant="h5">
+                  Technologies
+                </Typography>
+              </Box>
+            </Divider>
             {Object.keys(technologies).map((key, kidx) => {
               return (
                 <Box key={key} sx={{ m: 1 }}>
@@ -145,21 +147,22 @@ const Main = () => {
             })}
           </Box>
         </Box>
-        <Divider />
         <Box sx={{ p: 1, gap: 1, m: 1 }} id="projects">
-          <Box
-            sx={{
-              display: 'flex',
-              gap: 1,
-              justifyContent: 'center',
-              alignItems: 'center'
-            }}
-          >
-            <Work />
-            <Typography sx={{ m: 1 }} variant="h5" fontWeight={'bold'}>
-              Projects
-            </Typography>
-          </Box>
+          <Divider>
+            <Box
+              sx={{
+                display: 'flex',
+                gap: 1,
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}
+            >
+              <Work />
+              <Typography sx={{ m: 1 }} variant="h5" fontWeight={'bold'}>
+                Projects
+              </Typography>
+            </Box>
+          </Divider>
           <Carousel
             animation="slide"
             interval={5000}
@@ -218,7 +221,6 @@ const Main = () => {
             ))}
           </Carousel>
         </Box>
-        <Divider />
         <Box id="contact">
           <Contact />
         </Box>
