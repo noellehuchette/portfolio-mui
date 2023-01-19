@@ -37,7 +37,7 @@ function Nav() {
     elem.scrollIntoView({
       behavior: 'smooth',
       block: 'center',
-      inline: 'center'
+      inline: 'start'
     });
   };
 

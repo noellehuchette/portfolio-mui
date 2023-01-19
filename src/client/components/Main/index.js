@@ -167,7 +167,7 @@ const Main = () => {
             animation="slide"
             interval={5000}
             duration={400}
-            sx={{ height: 1 }}
+            sx={{ height: 1, cursor: 'pointer' }}
           >
             {projects.map((project, pidx) => (
               <Box
