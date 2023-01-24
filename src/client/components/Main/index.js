@@ -22,13 +22,14 @@ const Main = () => {
         sx={{
           p: 1,
           '& > *': {
-            p: 1
+            p: 1,
+            m: 1,
+            gap: 1
           }
         }}
       >
-        <Divider />
+        <Divider id="home" />
         <Box
-          id="home"
           sx={{
             display: 'flex',
             flexWrap: 'wrap',
@@ -57,6 +58,7 @@ const Main = () => {
             <Box
               sx={{
                 p: 1,
+                m: 1,
                 width: '85%',
                 display: 'flex',
                 flexDirection: 'column'
@@ -73,7 +75,7 @@ const Main = () => {
               </Typography>
             </Box>
           </Box>
-          <Typography variant="body1" sx={{ my: 2, p: 2 }}>
+          <Typography variant="body1" sx={{ my: 1, p: 1 }}>
             Software Engineer with a background in mechanical engineering and
             control systems. Tenacious, professional self-starter with strong
             problem solving skills and well developed organizational abilities.
@@ -83,11 +85,16 @@ const Main = () => {
           </Typography>
         </Box>
         <Box
-          id="about"
-          sx={{ m: 1, p: 1, gap: 2, display: 'flex', flexDirection: 'column' }}
+          sx={{
+            m: 1,
+            p: 1,
+            gap: 2,
+            display: 'flex',
+            flexDirection: 'column'
+          }}
         >
-          <Box>
-            <Divider>
+          <Box sx={{ gap: 1 }}>
+            <Divider id="about">
               <Box
                 sx={{
                   display: 'flex',
@@ -97,14 +104,14 @@ const Main = () => {
                 }}
               >
                 <School />
-                <Typography sx={{}} variant="h5" fontWeight={'bold'}>
+                <Typography variant="h5" fontWeight={'bold'}>
                   Education
                 </Typography>
               </Box>
             </Divider>
             {education.map((edu, eidx) => {
               return (
-                <Box sx={{ m: 1, gap: 1 }} key={`${edu.school}`}>
+                <Box sx={{ m: 1, p: 1, gap: 1 }} key={`${edu.school}`}>
                   <Typography variant="h6">{edu.school}</Typography>
                   <Typography variant="subtitle1">{edu.degree}</Typography>
                   <Typography variant="subtitle2">{edu.graduation}</Typography>
@@ -112,7 +119,7 @@ const Main = () => {
               );
             })}
           </Box>
-          <Box>
+          <Box sx={{ gap: 1 }}>
             <Divider>
               <Box
                 sx={{
@@ -130,7 +137,7 @@ const Main = () => {
             </Divider>
             {Object.keys(technologies).map((key, kidx) => {
               return (
-                <Box key={key} sx={{ m: 1 }}>
+                <Box key={key} sx={{ m: 1, p: 1 }}>
                   <Typography variant="h6" fontStyle={'italic'}>
                     {key[0].toUpperCase() + key.slice(1)}:
                   </Typography>
@@ -147,8 +154,8 @@ const Main = () => {
             })}
           </Box>
         </Box>
-        <Box sx={{ p: 1, gap: 1, m: 1 }} id="projects">
-          <Divider>
+        <Box sx={{ p: 1, gap: 1, m: 1 }}>
+          <Divider id="projects">
             <Box
               sx={{
                 display: 'flex',
@@ -177,9 +184,10 @@ const Main = () => {
                   flexDirection: 'column',
                   alignItems: 'center',
                   justifyContent: 'space-evenly',
-                  minHeight: '250px',
+                  minHeight: '300px',
                   p: 1,
-                  m: 1
+                  m: 1,
+                  gap: 1
                 }}
               >
                 <Typography
