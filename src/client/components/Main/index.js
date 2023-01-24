@@ -66,7 +66,10 @@ const Main = () => {
             >
               <Typography variant="h4">Noelle Huchette</Typography>
               <Divider>
-                <Typography variant="subtitle" sx={{ fontFamily: 'monospace' }}>
+                <Typography
+                  variant="subtitle1"
+                  sx={{ fontFamily: 'monospace' }}
+                >
                   (they/them)
                 </Typography>
               </Divider>
@@ -198,7 +201,7 @@ const Main = () => {
                   {project.name}
                 </Typography>
                 <p>{project.description}</p>
-                <Typography variant="body">
+                <Typography variant="body2">
                   {project.tech.map((t, tidx) => (
                     <span key={`${pidx}+${tidx}`}>
                       {tidx ? ', ' : ''}
